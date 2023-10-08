@@ -1,6 +1,6 @@
 # Vertically scale T2 micro instance to a T2 medium instance
 
-**This repository walks through a scenario where infrastructure engineers would need to vertically scale compute and memory resources to handle increased http traffic to NGINX proxy forwarding to a gunicorn server running a Flask application. In this case the Flask application is a URL-Shortener**
+**This repository walks through a scenario where infrastructure engineers would need to vertically scale compute and memory resources to handle increased http traffic to NGINX proxy forwarding to a gunicorn server running a Flask application. In this case the Flask application is a [URL-Shortener](https://github.com/elmorenox/jenkins-flaskapp-on-ec2-in-vpc)**
 
 ## Story:
 The URL Shortener has become very popular recently. The URL Shortener is growing in demand and you must ensure at least 14,000 users can access the application at any moment.
@@ -51,3 +51,5 @@ Rebuild the Jenkins job
 1. Navigate to the Jenkins dashboard
    - Select the url-shortener job
    - Rebuild the job
+
+![load-test](vpc-topology-load-test.png)
