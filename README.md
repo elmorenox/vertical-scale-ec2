@@ -12,13 +12,13 @@ The QA engineer will send 14,000 requests to the server. After the QA engineer t
 
 ### QA Engineer's Results:
 
-The QA engineer sent 14,000 requests to the server. The QA engineer reported that the server did not respond to all requests. The server only responded to 9 requests and 99% of cpu resources were used.
+The QA engineer sent 14,000 requests to the server. The QA engineer reported that the server did not respond to all requests. The server only responded with a 500 response code 9 times and 99% of th 2 cpu cores were used.
 
 ![cpu-usage](url-shortener-qa-cpu.png)
 
 ## Resolution:
 
-The infrastructure engineer will need to vertically scale the compute and memory resources to handle the increased traffic. The infrastructure engineer will need to vertically scale the T2 medium instance to a T2 xl instance.
+The infrastructure engineer will need to vertically scale the compute and memory resources to handle the increased traffic. The infrastructure engineer will need to vertically scale the T2 medium instance to a T2 xl instance. This will give us an extra 2 cpu cores and 8GB of memory.
 
 ## Create an T2.xl instance
 
@@ -60,3 +60,9 @@ Rebuild the Jenkins job
    - Rebuild the job
 
 ![load-test](vpc-topology-load-test.png)
+
+### QA Engineer's Results after vertical scale:
+
+The QA engineer sent 14,000 requests to the server over 10s. The QA engineer reported that the server responded to all requests with a 200 response code and 1 cpu core rose to 87% the other 3 stayed under 47%
+
+![cpu-usage-after-scale](url-shortener-qa-cpi-post-scale.png)
